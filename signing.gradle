@@ -1,0 +1,7 @@
+def debugKeystorePropertiesFile = rootProject.file("keystores/debug.keystore.properties")
+def debugKeystoreProperties = new Properties()
+debugKeystoreProperties.load(new FileInputStream(debugKeystorePropertiesFile))
+
+def keystorePropertiesFile = rootProject.file("keystores/keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
