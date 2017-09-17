@@ -80,7 +80,7 @@ public class TFImageClassifier implements Classifier {
     // TODO: make this handle non-assets.
     String actualFilename = labelFilename.split("file:///android_asset/")[1];
     Log.i(TAG, "Reading labels from: " + actualFilename);
-    BufferedReader br = null;
+    BufferedReader br;
     br = new BufferedReader(new InputStreamReader(assetManager.open(actualFilename)));
     String line;
     while ((line = br.readLine()) != null) {
@@ -148,7 +148,7 @@ public class TFImageClassifier implements Classifier {
 
     // Find the best classifications.
     PriorityQueue<RecognitionModel> pq =
-        new PriorityQueue<RecognitionModel>(
+        new PriorityQueue<>(
             3,
             new Comparator<RecognitionModel>() {
               @Override
@@ -164,7 +164,7 @@ public class TFImageClassifier implements Classifier {
                 "" + i, labels.size() > i ? labels.get(i) : "unknown", outputs[i], null));
       }
     }
-    final ArrayList<RecognitionModel> recognitions = new ArrayList<RecognitionModel>();
+    final ArrayList<RecognitionModel> recognitions = new ArrayList<>();
     int recognitionsSize = Math.min(pq.size(), MAX_RESULTS);
     for (int i = 0; i < recognitionsSize; ++i) {
       recognitions.add(pq.poll());

@@ -299,6 +299,7 @@ cradle
 crib
 four-poster
 bookcase
+book
 china cabinet
 medicine chest
 chiffonier
@@ -508,6 +509,7 @@ oxygen mask
 snorkel
 loudspeaker
 microphone
+phone
 screen
 mouse
 electric fan
@@ -736,6 +738,7 @@ mashed potato
 bell pepper
 head cabbage
 broccoli
+headphones
 cauliflower
 zucchini
 spaghetti squash
@@ -841,6 +844,7 @@ birdhouse
 hamper
 ping-pong ball
 pencil box
+pencil
 pay-phone
 consomme
 apron
