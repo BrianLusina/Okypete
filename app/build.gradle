@@ -2,12 +2,17 @@ apply plugin: "com.android.application"
 apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 
+ext {
+    // anko version
+    ankoVersion = "0.10.1"
+}
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.okypete"
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -45,16 +50,19 @@ android {
 dependencies {
     implementation fileTree(include: ["*.jar"], dir: "libs")
     implementation files("libs/libandroid_tensorflow_inference_java.jar")
-    
+
     // support lib
     implementation "com.android.support:appcompat-v7:26.1.0"
-    
+
     // kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    
+
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$ankoVersion"
+
     // camera kit
     implementation "com.flurgle:camerakit:0.9.13"
-    
+
     // test
     testImplementation "junit:junit:4.12"
     androidTestImplementation("com.android.support.test.espresso:espresso-core:2.2.2", {
